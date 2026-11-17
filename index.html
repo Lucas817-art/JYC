@@ -372,6 +372,70 @@ body.gated{overflow:hidden;height:100vh;background:#061627;}
 .row.static:hover .go{color:var(--muted);transform:none;}
 .row.static .go{font-size:12px;letter-spacing:.06em;color:var(--ink-2);}
 
+/* ---- 强提醒 ---- */
+.alert{
+  margin-top:14px;
+  padding:clamp(20px,2.8vw,26px) clamp(18px,3vw,28px);
+  background:#FDF4F5;
+  border:1px solid rgba(172,5,29,.26);
+  box-shadow:inset 0 3px 0 var(--red);
+}
+.alert-head{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:var(--red);
+  font-size:11.5px;
+  font-weight:500;
+  letter-spacing:.18em;
+  margin-bottom:12px;
+}
+.alert-head svg{width:16px;height:16px;flex:0 0 auto;}
+.alert-title{
+  margin:0 0 8px;
+  font-family:var(--serif);
+  font-size:clamp(16px,2.1vw,20px);
+  font-weight:600;
+  line-height:1.6;
+  letter-spacing:.02em;
+  color:#8B0412;
+}
+.alert-desc{
+  margin:0 0 18px;
+  font-size:13px;
+  font-weight:300;
+  line-height:1.95;
+  color:#5A4450;
+  max-width:62em;
+}
+.alert-foot{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:12px 18px;
+}
+.alert-cta{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  padding:10px 18px;
+  background:var(--red);
+  color:#fff;
+  font-size:13px;
+  letter-spacing:.08em;
+  text-decoration:none;
+  transition:background .25s ease, transform .25s ease;
+}
+.alert-cta svg{width:15px;height:15px;}
+.alert-cta:hover{background:var(--red-deep);transform:translateX(3px);}
+.alert-cta:focus-visible{outline:2px solid var(--red);outline-offset:3px;}
+.alert-note{
+  font-size:11.5px;
+  font-weight:300;
+  letter-spacing:.04em;
+  color:#8A7078;
+}
+
 /* ---- 免责说明 ---- */
 .disclaimer{
   margin-top:12px;
@@ -530,6 +594,26 @@ body.gated{overflow:hidden;height:100vh;background:#061627;}
           </span>
         </a>
       </div>
+
+      <div class="alert">
+        <div class="alert-head">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2.9l9.2 16.2H2.8z" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M12 8.6v4.9" stroke="currentColor" stroke-width="1.6"/>
+            <circle cx="12" cy="16.4" r="1" fill="currentColor"/>
+          </svg>
+          <span>强提醒 · 反欺诈排查</span>
+        </div>
+        <p class="alert-title">首次交易赊销，或有任何怀疑：先排查买方身份</p>
+        <p class="alert-desc">凡首次赊销交易，或对买方主体、交易背景、付款记录存在任何怀疑，请先通过反欺诈排查工具核验买方身份与风险信息，确认无误后再推进合作。</p>
+        <div class="alert-foot">
+          <a class="alert-cta" href="https://tldw.jrb.ningbo.gov.cn/ningboRiskCheck/index.html#/pc" target="_blank" rel="noopener noreferrer">
+            打开反欺诈排查工具
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13M13 6.5l5.5 5.5L13 17.5" stroke="currentColor" stroke-width="1.5"/></svg>
+          </a>
+          <span class="alert-note">外部政府平台 · 排查结果仅供参考，不替代尽职调查</span>
+        </div>
+      </div>
     </section>
 
     <!-- ---- 智能问答 ---- -->
@@ -656,7 +740,7 @@ body.gated{overflow:hidden;height:100vh;background:#061627;}
       <div class="group-head">
         <h2>官方与支持</h2>
         <span class="rule" aria-hidden="true"></span>
-        <span class="note">官网 · 答疑渠道</span>
+        <span class="note">官网 · 邮箱 · 企微群</span>
       </div>
       <div class="list">
         <a class="row" href="https://www.sinosure.com.cn" target="_blank" rel="noopener noreferrer">
@@ -674,6 +758,22 @@ body.gated{overflow:hidden;height:100vh;background:#061627;}
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13M13 6.5l5.5 5.5L13 17.5" stroke="currentColor" stroke-width="1.5"/></svg>
           </span>
         </a>
+        <a class="row" href="mailto:fengpc@sinosure.com.cn">
+          <span class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <rect x="2.8" y="5.2" width="18.4" height="13.6" rx="1.2" stroke="currentColor" stroke-width="1.3"/>
+              <path d="M3.4 6.2l8.6 6.2 8.6-6.2" stroke="currentColor" stroke-width="1.3"/>
+              <path d="M3.2 17.6l6.2-5.4M20.8 17.6l-6.2-5.4" stroke="currentColor" stroke-width="1.2" opacity=".55"/>
+            </svg>
+          </span>
+          <span class="txt">
+            <span class="t">邮件联系：fengpc@sinosure.com.cn</span>
+            <span class="d">直接发邮件给我；如需加入信保服务企微群，可先联系 Yuky 李婉玉。</span>
+          </span>
+          <span class="go">写信
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13M13 6.5l5.5 5.5L13 17.5" stroke="currentColor" stroke-width="1.5"/></svg>
+          </span>
+        </a>
         <div class="row static">
           <span class="ic" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none">
@@ -683,8 +783,8 @@ body.gated{overflow:hidden;height:100vh;background:#061627;}
             </svg>
           </span>
           <span class="txt">
-            <span class="t">其他疑问：联系 Yuky 李婉玉</span>
-            <span class="d">加入信保服务企微群，群内可直接联系客户经理获取支持。</span>
+            <span class="t">其他疑问：联系对应跟单同事</span>
+            <span class="d">在信保服务企微群内沟通，由对应跟单同事对接处理。</span>
           </span>
           <span class="go">企微群</span>
         </div>
@@ -693,7 +793,7 @@ body.gated{overflow:hidden;height:100vh;background:#061627;}
 
     <footer class="site-foot">
       <p class="foot-sign">信保助手 · 工具导航</p>
-      <p>本页仅作工具入口汇总，具体条款与业务口径以公司正式文件为准。</p>
+      <p>本页仅作工具入口汇总，具体条款与业务口径以公司正式文件为准。邮箱：fengpc@sinosure.com.cn</p>
     </footer>
 
   </main>
